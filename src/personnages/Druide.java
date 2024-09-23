@@ -29,9 +29,7 @@ public class Druide {
 	}
 	
 	public int preparerPotion() {
-		public int nextInt() {
-			return 
-		}
+		// TODO
 	}
 	
 	public static void main(String[] args) {
