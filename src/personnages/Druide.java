@@ -18,7 +18,7 @@ public class Druide {
 	}
 
 	private void parler(String texte) {
-		System.out.println(prendreParole() + "«" + texte + "»" );
+		System.out.println(prendreParole() + " « " + texte + " » " );
 	}
 
 	private String prendreParole() {
