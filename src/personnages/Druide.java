@@ -28,9 +28,10 @@ public class Druide {
 		return "Le druide " + nom + " :";
 	}
 	
+	//3
 	public void preparerPotion() {
 		Random random = new Random();
-		int hasard = random.nextInt(effetPotionMax);
+		int hasard = random.nextInt(effetPotionMax + 1 - effetPotionMin)+ effetPotionMin;
 		if (hasard > 7) {
 			parler("J'ai préparé une super potion de force de force " + hasard);
 		} else {
