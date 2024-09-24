@@ -1,5 +1,7 @@
 package personnages;
 
+import java.util.Iterator;
+
 public class Village {
 	private String nom;
 	private Chef chef;
@@ -13,6 +15,10 @@ public class Village {
 	
 	public void setChef(Chef chef) {
 		this.chef = chef;
+	}
+	
+	public Chef getChef() {
+		return chef;
 	}
 	
 	public String getNom() {
@@ -36,16 +42,32 @@ public class Village {
 			return villageois[ref] ;
 	}
 	
+	public void afficherVillageois() {
+		System.out.println("Dans le " + getNom() + " du chef " + getChef() + " vivent les légendaires gaulois :");
+		for (int i = 0; i<nbVillageois;i++) {
+			System.out.println("-" + villageois[i]);
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return nom;
+	}
+
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles", 30);
 		//Gaulois gaulois = village.trouverHabitant(30);
 		// e) le tableau à une taille de 0 à 29 l'emplacement 30 est donc inutilisable.
 		Chef abararacourcix = new Chef("Abararacourcix",6,village);
-		village.ajouterHabitant();
+		village.setChef(abararacourcix);
 		Gaulois asterix = new Gaulois("Astérix",8);
 		village.ajouterHabitant(asterix);
 		//Gaulois gaulois = village.trouverHabitant(1);
 		//System.out.println(gaulois);
+		//e) asterix est assigné à villageois[0], villageois[1] est donc vide ce qui explique le null
+		Gaulois obelix = new Gaulois("Obélix",25);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 		
 	}
 }

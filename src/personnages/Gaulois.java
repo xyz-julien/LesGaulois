@@ -29,7 +29,7 @@ public class Gaulois {
 	
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		return nom;
 	}
 	// 4
 	public void boirePotion(int force) {
