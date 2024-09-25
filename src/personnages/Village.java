@@ -35,9 +35,9 @@ public class Village {
 	
 	public Gaulois trouverHabitant(int ref) {
 		//if (ref<=0 || ref>nbVillageois) {
-			//System.out.println("Réference non existante !");
+		//	System.out.println("Réference non existante !");
 		//} else {
-			return villageois[ref] ;
+			return villageois[ref] ;	
 	}
 	
 	public void afficherVillageois() {
