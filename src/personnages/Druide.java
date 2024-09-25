@@ -2,8 +2,6 @@ package personnages;
 
 import java.util.Random;
 
-
-
 public class Druide {
 	private static final int FORCE_MOYENNE = 7;
 	
