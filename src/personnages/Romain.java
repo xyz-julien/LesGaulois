@@ -3,6 +3,9 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements = new Equipement[2];
+	private int nbEquipement = 0;
+	private int forceEquipement = 0;
 	
 	public Romain(String nom, int force) {
 		assert force >= 0;
@@ -31,6 +34,29 @@ public class Romain {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
+		}
+	}
+	
+	private int calculerForceEquipement() {
+		if (forceEquipement == 0) {
+			return 0;
+		} else {
+			for (int i = 0; i<=nbEquipement; i++) {
+				forceEquipement += Equipement.donnerNumero(i);
+			}
+		} 	
+	}
+	
+	public void sEquiper(Equipement equipement) {
+		calculerForceEquipement();
+		if (forceEquipement == 3) {
+			System.out.println("Le Romain est déjà bien protégé !" );
+		} else if (forceEquipement == 2) {
+				
+			} else if (forceEquipement == 1) {
+				
+				} else {
+
 		}
 	}
 	
