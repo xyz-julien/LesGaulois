@@ -41,8 +41,8 @@ public class Romain {
 		if (forceEquipement == 0) {
 			return 0;
 		} else {
-			for (int i = 0; i<=nbEquipement; i++) {
-				forceEquipement += Equipement.donnerNumero(i);
+			for (int i = 0; i<nbEquipement; i++) {
+				forceEquipement += Equipement.donnerNumero(equipements[i]);
 			}
 		} 	
 	}
@@ -52,11 +52,11 @@ public class Romain {
 		if (forceEquipement == 3) {
 			System.out.println("Le Romain est déjà bien protégé !" );
 		} else if (forceEquipement == 2) {
-				
+				// TODO
 			} else if (forceEquipement == 1) {
-				
+				// TODO
 				} else {
-
+					//TODO
 		}
 	}
 	
