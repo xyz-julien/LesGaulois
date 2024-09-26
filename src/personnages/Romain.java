@@ -50,13 +50,14 @@ public class Romain {
 	public void sEquiper(Equipement equipement) {
 		calculerForceEquipement();
 		if (forceEquipement == 3) {
-			System.out.println("Le Romain est déjà bien protégé !" );
-		} else if (forceEquipement == 2) {
-				// TODO
-			} else if (forceEquipement == 1) {
-				// TODO
+			System.out.println("Le soldat " + getNom() + " est déjà bien protégé !" );
+		} else if (forceEquipement == 2 && Equipement.donnerNumero(equipement) == 2) {
+			System.out.println("Le soldat " + getNom() + " possède déjà un bouclier.");
+			} else if (forceEquipement == 1 && Equipement.donnerNumero(equipement) == 1) {
+				System.out.println("Le soldat " + getNom() + " possède déjà un casque.");
 				} else {
-					//TODO
+					equipements[nbEquipement] = equipement;
+					nbEquipement++;
 		}
 	}
 	
