@@ -5,7 +5,6 @@ public class Romain {
 	private int force;
 	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipement = 0;
-	private int forceEquipement = 0;
 	
 	public Romain(String nom, int force) {
 		assert force >= 0;
@@ -37,34 +36,37 @@ public class Romain {
 		}
 	}
 	
-	private int calculerForceEquipement() {
-		if (forceEquipement == 0) {
-			return 0;
-		} else {
-			for (int i = 0; i<nbEquipement; i++) {
-				forceEquipement += Equipement.donnerNumero(equipements[i]);
-			}
-		} 	
-	}
-	
-	public void sEquiper(Equipement equipement) {
-		calculerForceEquipement();
-		if (forceEquipement == 3) {
-			System.out.println("Le soldat " + getNom() + " est déjà bien protégé !" );
-		} else if (forceEquipement == 2 && Equipement.donnerNumero(equipement) == 2) {
-			System.out.println("Le soldat " + getNom() + " possède déjà un bouclier.");
-			} else if (forceEquipement == 1 && Equipement.donnerNumero(equipement) == 1) {
-				System.out.println("Le soldat " + getNom() + " possède déjà un casque.");
-				} else {
-					equipements[nbEquipement] = equipement;
-					nbEquipement++;
-		}
-	}
+    public void sEquiper(Equipement equipement) {
+        switch (nbEquipement) {
+            case 2:
+                System.out.println("Le soldat " + nom + " est déjà bien protégé !");
+                break;
+            case 1:
+                if (equipements[0] == equipement) {
+                    System.out.println("Le soldat " + nom + " possède déjà un " + equipement + " !");
+                } else {
+                    ajouterEquipement(equipement);
+                }
+                break;
+            default :
+                ajouterEquipement(equipement);
+        }
+    }
+
+    private void ajouterEquipement(Equipement equipement) {
+        equipements[nbEquipement] = equipement;
+        nbEquipement++;
+        System.out.println("Le soldat " + nom + " s'équipe avec un " + equipement + ".");
+    }
 	
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
 		System.out.println(minus.prendreParole());
 		minus.parler("a");
 		minus.recevoirCoup(1);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
 }

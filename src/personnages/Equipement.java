@@ -9,18 +9,6 @@ public enum Equipement {
 		this.nom = nom;
 	}
 	
-	public int donnerNumero(Equipement equipement) {
-		int numero = 0;
-		switch(equipement) {
-			case CASQUE :
-				numero = 1;
-				break;
-			default :
-				numero = 2;
-		}
-		return numero;
-	}
-	
 	@Override
 	public String toString() {
 		return nom;
