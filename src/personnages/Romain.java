@@ -62,7 +62,6 @@ public class Romain {
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
 		System.out.println(minus.prendreParole());
-		minus.parler("a");
 		minus.recevoirCoup(1);
 		minus.sEquiper(Equipement.CASQUE);
 		minus.sEquiper(Equipement.CASQUE);

@@ -1,7 +1,7 @@
 package personnages;
 
 public enum Equipement {
-	CASQUE("casque"),BOUCLIER("bouclier");
+	CASQUE("casque"), BOUCLIER("bouclier");
 	
 	private String nom;
 	
@@ -17,7 +17,7 @@ public enum Equipement {
 	public static void main(String[] args) {
 		System.out.println("Les équipements sont :");
 		for (Equipement equipement : Equipement.values()) {
-			System.out.println("-" + equipement);
+			System.out.println("- " + equipement);
 		}
 	}
 }
