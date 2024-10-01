@@ -15,6 +15,14 @@ public class Gaulois {
 	public String getNom() {
 		return nom;
 	}
+	
+	public int getNbTrophees() {
+		return nbTrophees;
+	}
+	
+	public Equipement[] getTrophees() {
+		return trophees;
+	}
 
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "« " + texte+ " » ");
@@ -30,7 +38,7 @@ public class Gaulois {
 	
 //	public void frapper(Romain romain) {
 //		System.out.println(nom + " envoie un grand coup de mâchoire de " + romain.getNom());
-//		romain.recevoirCoup(force / 3 * effetPotion);
+//		romain.recevoirCoup((force / 3) * effetPotion);
 //	}
 	
 	public void frapper(Romain romain) {
