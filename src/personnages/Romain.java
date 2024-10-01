@@ -8,7 +8,7 @@ public class Romain {
 	
 	
 	public Romain(String nom, int force) {
-		assert force >= 0;
+		assert forcePositif();
 		this.nom = nom;
 		this.force = force;
 	}
@@ -28,18 +28,23 @@ public class Romain {
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
 	}
+
+	public boolean forcePositif() {
+		return force>=0;
+	}
 	
 //	public void recevoirCoup(int forceCoup) {
 //		int forceSur = force;
-//		assert force >= 0;
+//		assert forcePositif();
 //		force -= forceCoup;
-//		assert force<forceSur;
 //		if (force > 0) {
 //			parler("Aïe");
 //		} else {
 //			parler("J'abandonne...");
 //		}
+//		assert force<forceSur;
 //	}
+	
 	
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
@@ -48,12 +53,6 @@ public class Romain {
 		int oldForce = force;
 		forceCoup = calculResistanceEquipement(forceCoup);
 		force -= forceCoup;
-		// if (force > 0) {
-		// 		parler("Aïe");
-		// } else {
-		// 		equipementEjecte = ejecterEquipement();
-		// 		parler("J'abandonne...");
-		// }
 		if (force > 0) {
 		    parler("Aïe");
 		} else {
@@ -81,7 +80,10 @@ public class Romain {
 			texte += resistanceEquipement + "!";
 		}
 		parler(texte);
-		forceCoup -= resistanceEquipement;
+		//forceCoup -= resistanceEquipement;
+		if (resistanceEquipement >= forceCoup) {
+			forceCoup = 1;
+		}
 		return forceCoup;
 	}
 	
