@@ -9,7 +9,7 @@ public class Musee {
 	public void donnerTrophees(Gaulois gaulois) {
 		Equipement[] transfert = gaulois.getTrophees();
 		if (nbTrophees==200) {
-			System.out.println("Le musée est plein");
+			System.out.println("Le musÃ©e est plein");
 		} else {
 			for (int i = 0; i<gaulois.getNbTrophees();nbTrophees++, i++) {
 				trophees[nbTrophees] == transfert[i];

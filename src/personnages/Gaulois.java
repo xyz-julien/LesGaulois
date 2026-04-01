@@ -25,7 +25,7 @@ public class Gaulois {
 	}
 
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte+ " » ");
+		System.out.println(prendreParole() + "<<" + texte + ">>");
 	}
 	
 //	private String prendreParole() {
@@ -37,19 +37,18 @@ public class Gaulois {
 	}
 	
 //	public void frapper(Romain romain) {
-//		System.out.println(nom + " envoie un grand coup de mâchoire de " + romain.getNom());
+//		System.out.println(nom + " envoie un grand coup de machoire de " + romain.getNom());
 //		romain.recevoirCoup((force / 3) * effetPotion);
 //	}
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		Equipement[] recup = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; recup != null && i < recup.length; i++,nbTrophees++) {
 			this.trophees[nbTrophees] = recup[i];
 		}
 	}
 
-	
 	@Override
 	public String toString() {
 		return nom;
@@ -58,12 +57,12 @@ public class Gaulois {
 	// 4
 	public void boirePotion(int force) {
 		this.effetPotion = force;
-		parler("Merci Druide, je sens que ma force est " + force + " fois décuplée.");
+		parler("Merci Druide, je sens que ma force est " + force + " fois dÃ©cuplÃ©.");
 	}
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix",8);
-		System.out.println("Le gaulois " + asterix.getNom() + " vient d'être créé.");
+		Gaulois asterix = new Gaulois("AstÃ©rix",8);
+		System.out.println("Le gaulois " + asterix.getNom() + " vient d'Ãªtre crÃ©e.");
 		Romain minus = new Romain("Minus", 6);
 		asterix.boirePotion(3);
 		asterix.frapper(minus);
